@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=640, initial-scale=1.0">
+    <title>A Million Digits</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <header class="controls">
+        <div class="control">
+            <img src="/logo.png" alt="A million digits" with="33" height="13" class="logo">
+        </div>
+        <div class="control">
+            <div class="controlHeading">
+                number:
+            </div>
+            <div class="numberSelect">
+                <div data-value="pi">π</div>
+                <div data-value="e">𝑒</div>
+                <div data-value="sqrt2">√2</div>
+                <div data-value="golden">φ</div>
+                <div data-value="seventh">⅐</div>
+            </div>
+        </div>
+
+        <div class="control">
+            <div class="controlHeading">
+                palette:
+            </div>
+            <div class="paletteList"></div>
+
+            <div class="customPaletteList">
+                <span class="paletteListHead">custom:</span>
+                <div class="customPalette">
+                    <input class="customColorPicker" type="color" name="custom1" value="#1f77b4" autocomplete="off">
+                    <input class="customColorPicker" type="color" name="custom2" value="#ff7f0e" autocomplete="off">
+                    <input class="customColorPicker" type="color" name="custom1" value="#2ca02c" autocomplete="off">
+                    <input class="customColorPicker" type="color" name="custom1" value="#d62728" autocomplete="off">
+                    <input class="customColorPicker" type="color" name="custom1" value="#9467bd" autocomplete="off">
+                    <input class="customColorPicker" type="color" name="custom1" value="#8c564b" autocomplete="off">
+                    <input class="customColorPicker" type="color" name="custom1" value="#e377c2" autocomplete="off">
+                    <input class="customColorPicker" type="color" name="custom1" value="#7f7f7f" autocomplete="off">
+                    <input class="customColorPicker" type="color" name="custom1" value="#bcbd22" autocomplete="off">
+                    <input class="customColorPicker" type="color" name="custom1" value="#17becf" autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <div class="control">
+            <div class="controlHeading">
+                theme:
+            </div>
+            <div class="themes">
+                <span class="lightTheme active">light</span> /
+                <span class="darkTheme">dark</span>
+            </div>
+
+            <div class="controlHeading">
+                padding:
+            </div>
+            <div>
+                <input type="range" class="paddingControl" min="0" max="4"  autocomplete="off">
+            </div>
+
+
+        </div>
+
+
+
+
+    </header>
+
+    <div class="outer">
+        <div class="container"></div>
+    </div>
+    <script src="/script.js"></script>
+
+</body>
+</html>

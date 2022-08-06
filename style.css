@@ -1,0 +1,161 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+    background: #eee;
+    color: #111;
+    min-width: 640px;
+}
+
+body.dark {
+    color: #eee;
+    background: #111;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 132px;
+    height: auto;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.outer {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    padding: 15px;
+    min-width: 640px;
+}
+
+.control {
+    max-width: 30%;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #ddd;
+}
+
+.control:last-child {
+    border-right: none;
+}
+
+.controlHeading {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.paletteList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.paletteListHead {
+    font-size: 10px;
+    padding: 2px;
+}
+
+.paletteContainer {
+    display: flex;
+    margin-bottom: 2px;
+    cursor: pointer;
+    border: 2px solid rgba(0,0,0,0);
+}
+
+.paletteContainer:hover {
+    border: 2px solid #ccc;
+}
+
+.paletteContainer.active {
+    border: 2px solid blue;
+}
+
+
+
+.paletteContainer > div {
+    flex: 1;
+    color: white;
+    padding: 2px 5px;
+    font-size: 12px;
+}
+
+.themes {
+    font-size: 12px;
+    margin-bottom: 1rem;
+}
+
+.themes span:hover {
+    cursor: pointer;
+}
+
+.themes span.active {
+    font-weight: bold;
+}
+
+.numberSelect div {
+    cursor: pointer;
+}
+
+.numberSelect div.active {
+    color: rgb(31, 119, 180);
+}
+
+canvas {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+
+.customPalette {
+    display: flex;
+}
+
+.customColorPicker {
+    outline: none;
+    border: none;
+    display: block;
+    padding: 0;
+    -webkit-appearance: none;
+}
+
+.customColorPicker::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+.customColorPicker::-webkit-color-swatch {
+	border: none;
+}
+
+.customColorPicker:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+@media all and (max-width: 1280px) {
+    .paletteList {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
