@@ -7,6 +7,7 @@
     let number = "pi";
     let digitsStr = "";
     let customPalette = null;
+    let renderType = "number";
 
     const font = [
         0b111101101101111, 0b110010010010111, 0b111001111100111,
@@ -171,6 +172,18 @@
                 const x0 = colIndex * digitWidth;
                 const y0 = rowIndex * digitHeight + 1;
 
+                if (renderType === "block") {
+                    ctx.fillStyle = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+                    ctx.fillRect(
+                        x0,
+                        y0,
+                        digitWidth - padding,
+                        digitHeight - padding
+                    );
+
+                    continue;
+                }
+
                 // 5th row, 3rd pixel
                 if (Boolean(char & (1 << 0))) {
                     const p = (y0 - 1 + 4) * width * 4 + (x0 + 2) * 4;
@@ -307,7 +320,9 @@
                 }
             }
 
-            ctx.putImageData(imageData, 0, 0);
+            if (renderType === "number") {
+                ctx.putImageData(imageData, 0, 0);
+            }
 
             container.appendChild(canvas);
         }
@@ -374,6 +389,24 @@
             document.body.classList.remove("light");
             document.querySelector(".lightTheme").classList.remove("active");
             document.querySelector(".darkTheme").classList.add("active");
+        });
+
+        document
+            .querySelector(".renderNumber")
+            .addEventListener("click", () => {
+                renderType = "number";
+                document.querySelector(".renderNumber").classList.add("active");
+                document
+                    .querySelector(".renderBlock")
+                    .classList.remove("active");
+                render();
+            });
+
+        document.querySelector(".renderBlock").addEventListener("click", () => {
+            renderType = "block";
+            document.querySelector(".renderNumber").classList.remove("active");
+            document.querySelector(".renderBlock").classList.add("active");
+            render();
         });
 
         document.querySelectorAll(".customColorPicker").forEach((el) => {

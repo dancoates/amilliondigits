@@ -110,6 +110,19 @@ body.dark {
     font-weight: bold;
 }
 
+.renderAs {
+    font-size: 12px;
+    margin-bottom: 1rem;
+}
+
+.renderAs span:hover {
+    cursor: pointer;
+}
+
+.renderAs span.active {
+    font-weight: bold;
+}
+
 .numberSelect div {
     cursor: pointer;
 }
@@ -126,6 +139,7 @@ canvas {
     margin: 0;
     padding: 0;
     display: block;
+    margin-bottom: -1px;
 }
 
 
